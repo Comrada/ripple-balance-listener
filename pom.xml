@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.5</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>com.github.comrada.crypto</groupId>
+  <artifactId>ripple-balance-listener</artifactId>
+  <version>1.0</version>
+  <name>Ripple Balance Listener</name>
+  <description>Demo project for Spring Boot</description>
+
+  <properties>
+    <java.version>17</java.version>
+    <postgresql.version>42.5.0</postgresql.version>
+    <xrpl4j.version>2.4.0</xrpl4j.version>
+    <immutables.version>2.9.2</immutables.version>
+    <guava.version>31.1-jre</guava.version>
+    <netty-resolver-dns.version>4.1.84.Final</netty-resolver-dns.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>${postgresql.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xrpl</groupId>
+      <artifactId>xrpl4j-model</artifactId>
+      <version>${xrpl4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jayway.jsonpath</groupId>
+      <artifactId>json-path</artifactId>
+      <version>2.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-resolver-dns-native-macos</artifactId>
+      <version>${netty-resolver-dns.version}</version>
+      <classifier>osx-aarch_64</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
